@@ -19,20 +19,17 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>ShutDown256.SimpleUtils.Logging</Id>
-    <Version>1.0.0</Version>
-    <Title>ShutDown256.SimpleUtils.Logging</Title>
-    <Authors>ShutDown</Authors>
-    <Owners>ShutDown</Owners>
-    <Summary>ShutDown256.SimpleUtils.Logging</Summary>
-    <Description>ShutDown256.SimpleUtils.Logging</Description>
-    <ReleaseNotes>
-    </ReleaseNotes>
-    <ProjectUrl>
-    </ProjectUrl>
-    <LicenseUrl>
-    </LicenseUrl>
-    <Copyright>Copyright © ShutDown</Copyright>
-    <Tags>ShutDown256.SimpleUtils.Logging</Tags>
+    <Version>0.1.0</Version>
+    <Title>SimpleUtils/Logging</Title>
+    <Authors>Vladislav Richter</Authors>
+    <Owners>Vladislav Richter</Owners>
+    <Summary>Simple logging tool</Summary>
+    <Description>Simple logging tool</Description>
+    <ReleaseNotes>First attempt, alpha</ReleaseNotes>
+    <ProjectUrl>https://github.com/shutdown256/SimpleUtils</ProjectUrl>
+    <LicenseUrl>https://github.com/shutdown256/SimpleUtils/blob/master/LICENSE</LicenseUrl>
+    <Copyright>Copyright © Vladislav Richter</Copyright>
+    <Tags>ShutDown256.SimpleUtils.Logging, Logging, Log</Tags>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
