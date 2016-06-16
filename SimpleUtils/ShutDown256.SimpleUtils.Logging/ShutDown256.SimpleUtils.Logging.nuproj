@@ -19,13 +19,13 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>ShutDown256.SimpleUtils.Logging</Id>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Title>SimpleUtils/Logging</Title>
     <Authors>Vladislav Richter</Authors>
     <Owners>Vladislav Richter</Owners>
     <Summary>Simple logging tool</Summary>
     <Description>Simple logging tool</Description>
-    <ReleaseNotes>First attempt, alpha</ReleaseNotes>
+    <ReleaseNotes>Fixed bug in output path</ReleaseNotes>
     <ProjectUrl>https://github.com/shutdown256/SimpleUtils</ProjectUrl>
     <LicenseUrl>https://github.com/shutdown256/SimpleUtils/blob/master/LICENSE</LicenseUrl>
     <Copyright>Copyright © Vladislav Richter</Copyright>
