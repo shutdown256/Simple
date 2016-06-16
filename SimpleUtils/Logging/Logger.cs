@@ -26,35 +26,17 @@ namespace Logging {
         public static void Error(string msg, Exception ex) {
             AddMsg($"{msg}: {ex}", LogType.Error);
         }
-
-        //public static void ToFile(string msg) {
-        //    lock (monitor) task = task.ContinueWith(t => {
-        //        //lock (monitor) {
-        //        try {
-        //            if (!Directory.Exists("Logs")) Directory.CreateDirectory("Logs");
-        //            using (StreamWriter sw = File.AppendText($"Logs{Environment.NewLine}{DateTime.Now.ToString("dd-MM-yyyy")}.txt")) {
-        //                sw.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}]<f> {msg}");
-        //            }
-        //        } catch { }
-        //        //}
-        //    }, TaskContinuationOptions.ExecuteSynchronously);
-        //}
-
+        
         private static void AddMsg(string msg, LogType type) {
-
-            //StackFrame frame = new StackFrame(2);
-            //frame.ToString()
-            //var method = frame.GetMethod();
-            //cn = method.DeclaringType.Name;
-            //msg = cn + " >> " + msg;
-            lock (monitor) task = task.ContinueWith(t => {
+            
+            lock (monitor) task = task.ContinueWith(async t => {
                 try {
                     Console.ForegroundColor = GetConsoleColor(type);
                     Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] {msg}");
                     Console.ResetColor();
                     if (!Directory.Exists("Logs")) Directory.CreateDirectory("Logs");
-                    using (StreamWriter sw = File.AppendText($"Logs{Environment.NewLine}{DateTime.Now.ToString("dd-MM-yyyy")}.txt")) {
-                        sw.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}]<{GetTypeTag(type)}> {msg}");
+                    using (StreamWriter sw = File.AppendText($"Logs\\{Environment.NewLine}{DateTime.Now.ToString("dd-MM-yyyy")}.txt")) {
+                        await sw.WriteLineAsync($"[{DateTime.Now.ToString("HH:mm:ss")}]<{GetTypeTag(type)}> {msg}");
                     }
                 } catch { }
             }, TaskContinuationOptions.ExecuteSynchronously);
